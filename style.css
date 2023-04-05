@@ -1,0 +1,264 @@
+*{ margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 125px 1fr 125px;
+    margin: 0px 325px 0px 325px;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Lora', serif;
+    background-color: #fff0ac;
+}
+
+
+/* TÍTULO */
+
+
+header {
+    display: grid;
+}
+
+h1 {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    color: #102333;
+    font-size: 1.7em;
+}
+
+p+p {
+    color: #610404;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+    display: grid;
+    grid-template-rows: 4fr 2fr;
+    row-gap: 10px;
+}
+
+
+/* CONTAINER DE CIMA */
+
+
+.faixa__principal {
+    display: grid;
+    grid-template-areas:
+        "principal secundaria"
+        "principal secundaria";
+    gap: 10px;
+    grid-template-columns: 7fr 6fr;
+}
+
+
+
+/* IMAGEM DA ESQUERDA */
+
+
+.img__principal {
+    grid-area: principal;
+    background-image: url(./img/principal);
+    background-size: cover;
+    display: grid;
+    place-items: end start;
+}
+
+
+/* FAIXA DE INFORMAÇÕES */
+
+
+.faixa__informacoes {
+    height: 2.5em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    opacity: 0;
+    transition-duration: .2s;
+}
+
+
+.informacoes {
+    background-color: rgba(0,5,10, 0.5);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 0px 10px;
+    
+}
+
+.informacoes p {
+    color: white;
+    opacity: 1;
+    font-size: 0.9em;
+}
+
+.comprar {
+    background-color: #610404;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.comprar a {
+    display: grid;
+    place-items: center;
+    align-items: center;
+}
+
+img[alt~="botao"] {
+    height: 2em;
+    width: 2em;
+}
+
+
+/* ANIMAÇÃO DA FAIXA DE INFORMAÇÕES */
+
+
+div[alt~="imgp"]:hover{
+    transform: scale(1.1);
+}
+
+div[alt~="imgp"]:hover > .faixa__informacoes{
+    opacity: 1;
+}
+
+/* CONTAINER DA DIREITA */
+
+
+.img__secundaria {
+    grid-area: secundaria;
+    display: grid;
+    grid-template-areas:
+        "img1 img2"
+        "img3 img4";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+
+/* IMGAGENS DO CONTAINER DA DIRETA */
+
+.img__secundaria > div{
+    display: grid;
+}
+
+.img1 {
+    background-image: url(./img/segunda);
+    background-size: cover;
+    grid-area: img1;
+
+}
+
+.img2 {
+    background-image: url(./img/terceira);
+    background-size: cover;
+    grid-area: img2;
+
+}
+
+.img3 {
+    background-image: url(./img/quarta);
+    background-size: cover;
+    grid-area: img3;
+}
+
+.img4 {
+    background-image: url(./img/quinta);
+    background-size: cover;
+    grid-area: img4;
+}
+
+
+/* CONTAINER DE BAIXO */
+
+
+.faixa__secundaria {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 2fr 2fr 3fr;
+}
+
+
+/* IMAGENS DO CONTAINER DE BAIXO */
+
+
+.faixa__secundaria > div{
+    display: grid;
+}
+
+
+.img5 {
+    background-image: url(./img/sexta);
+    background-size: cover;
+}
+
+.img6 {
+    background-image: url(./img/oitavo);
+    background-size: cover;
+}
+
+.img7 {
+    background-image: url(./img/nona);
+    background-size: cover;
+}
+
+
+/* ANIMAÇÕES DAS IMAGENS */
+
+
+div[alt~="img"]:hover > .faixa__informacoes{
+    opacity: 1;
+}
+
+div[alt~="img"]:hover{
+    transform: scale(1.2);
+}
+
+
+/* BOTÃO VER MAIS */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ver__mais {
+    border-radius: 50px;
+    background-color: #102333;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+}
+
+.ver__mais * {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ANIMAÇÃO DO BOTÃO */
+
+
+.ver__mais:hover {
+    background-color: black;
+    border-style: solid;
+    border-color: #102333;
+    transform: scale(1.1);
+}
+
+/* ANIMAÇÃO FAIXA DE INFORMAÇÕES GERAL */
+
+div[alt~="img"] > .faixa__informacoes{
+    place-self: end start;
+}
